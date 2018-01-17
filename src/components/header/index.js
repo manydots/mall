@@ -1,67 +1,44 @@
 'use strict';
 
 import React from 'react';
+import Tools from 'utils/index';
 import './index.scss';
-import {Navigation,Icon,Menu} from 'qnui';
-const {Item, Group} = Navigation
+import {Button} from 'qnui';
 
-let onMouseEnter = (id, item, nav) => {
-    console.log('onMouseEnter')  
+const linkConfig = {
+  //本地localhost或127.0.0.1环境下的路径设置
+  local: {
+    'index': '/demos/index.html',
+    'login': '/demos/login.html'
+  },
+  onLine: {//自行根据服务端路径定义
+    'index': '/demos/index.html',
+    'login': '/demos/login.html'
+  }
 }
-
-let onMouseLeave = (id, item, nav) => {
-    console.log('onMouseLeave')
-}
+const links = Tools.isLocal() ? linkConfig.local : linkConfig.onLine;
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      login:false,
+      uerInfo:{
+        userName:'请登录'
+      }
+    }
+  }
+  Login(){
+    location.href = links.login;
+  }
   render() {
+    const userName = this.state.login == true ? this.state.uerInfo.userName :(<Button onClick={this.Login.bind(this)} shape='text' style={{color:'#f22e00'}}>请登录</Button>);
     return (
-       <Navigation
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        type="filling"
-        activeDirection="bottom"
-        >
-        <li className="navigation-logo-zone">
-          <Icon type="email" />
-          <span>聚星台</span>
-        </li>
-        <Item
-            itemid="1"
-            text="Value Added Service"
-            icon="service"
-            >
-                <Menu>
-                    <Menu.Item key="1">Option 1</Menu.Item>
-                    <Menu.Item disabled key="2">Option 2</Menu.Item>
-                    <Menu.Item key="3">Option 3</Menu.Item>
-                    <Menu.Item key="4">Option 4</Menu.Item>
-                    <Menu.PopupItem label="Option 4" key="5">
-                      <Menu>
-                        <Menu.Item key="11">Option 1</Menu.Item>
-                      </Menu>
-                    </Menu.PopupItem>
-                </Menu>
-            </Item>
-            <Item
-                itemid="2"
-                text="Training"
-                icon="training"
-                >
-            </Item>
-        <li className="navigation-toolbar">
-          <ul>
-            <li>
-              <Icon type="atm" />
-              <span>帮助</span>
-            </li>
-            <li>
-              <Icon type="set" />
-              <span>设置</span>
-            </li>
-          </ul>
-        </li>
-    </Navigation>
+       <div className="Header">
+          <div className="Top">
+              {userName}，欢迎来到Malls！
+          </div>
+       </div>
     );
   }
 }
