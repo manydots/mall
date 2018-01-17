@@ -1,5 +1,5 @@
 
-> 项目A线上链接 [http://www.233ar.com](http://www.233ar.com/demos/index.html/)
+> 项目A线上链接 [http://www.233ar.com](http://www.233ar.com/demos/index.html)
 
 ## 项目介绍
 
