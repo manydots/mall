@@ -25,7 +25,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       uerInfo:{
-        userName:$.cookie('username') ||'请登录'
+        userName:$.cookie('username')
       }
     }
   }

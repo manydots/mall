@@ -87,7 +87,7 @@ class Detail extends React.Component {
 	    	   			</div>
 	    	   		</div>
 	    	   </div>
-	    	   <div className="footer"></div>
+	    	   <div className="footer">{str}</div>
 	    		
 	    	</div>
 		 

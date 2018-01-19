@@ -38,7 +38,7 @@ class Login extends React.Component {
             if (errors) {
                 return;
             }else{
-                $.cookie('username','小厨');
+                // $.cookie('username','小厨');
             	$.ajax({  
 			        type: "GET",  
 			        url: "http://www.233ar.com/mall/user/logindo", 
