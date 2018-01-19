@@ -18,6 +18,6 @@ export default {
   //线上环境
   production:{
     //这里填入线上的host
-    _HOST:"//lbs.taobao.com"
+    _HOST:"http://www.233ar.com"
   }
 }

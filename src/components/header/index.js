@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Tools from 'utils/index';
+import $ from 'jquery';
+import '../../sources/jquery.cookie';
 import './index.scss';
 import {Button} from 'qnui';
 
@@ -22,17 +24,19 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      login:false,
       uerInfo:{
-        userName:'请登录'
+        userName:$.cookie('username') ||'请登录'
       }
     }
+  }
+  componentDidMount(){
+    
   }
   Login(){
     location.href = links.login;
   }
   render() {
-    const userName = this.state.login == true ? this.state.uerInfo.userName :(<Button onClick={this.Login.bind(this)} shape='text' style={{color:'#f22e00'}}>请登录</Button>);
+    const userName = this.state.uerInfo.userName !== undefined &&  this.state.uerInfo.userName != ''   ? (<Button shape='text' style={{color:'#f22e00'}}>{this.state.uerInfo.userName}</Button>) :(<Button onClick={this.Login.bind(this)} shape='text' style={{color:'#f22e00'}}>请登录</Button>);
     return (
        <div className="Header">
           <div className="Top">

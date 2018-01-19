@@ -6,6 +6,7 @@ import Tools from 'utils/index';
 import Form, {Item as FormItem } from 'qnui/lib/form';
 import {Button,Input,Field,Dialog} from 'qnui';
 import $ from 'jquery';
+import '../../sources/jquery.cookie';
 import './index.scss';
 
 const linkConfig = {
@@ -37,9 +38,10 @@ class Login extends React.Component {
             if (errors) {
                 return;
             }else{
+                $.cookie('username','小厨');
             	$.ajax({  
 			        type: "GET",  
-			        url: "http://www.233ar.com:8080/user/logindo", 
+			        url: "http://www.233ar.com/mall/user/logindo", 
 			        data: {
 			        	user_name:values.userName,
 			        	login_password:values.passWord

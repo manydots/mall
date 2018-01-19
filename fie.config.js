@@ -7,7 +7,7 @@ module.exports = {
 
   toolkitConfig: {
     // 本地服务器端口号
-    port: 9000,
+    port: 8080,
     // 是否自动打开浏览器
     open: true,
     // 打开浏览器后 自动打开的 目标页面

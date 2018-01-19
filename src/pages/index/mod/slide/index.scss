@@ -1,0 +1,17 @@
+
+.Slide{
+  width: 100%;
+  overflow: hidden;
+  clear: both;
+  .SlideIn{
+    width:1190px;
+    margin: 0 auto;
+    overflow:hidden;
+    height: 50px;
+    line-height: 50px;
+    background-color: #ececec;
+    color:#333;
+    text-align: center;
+  }
+
+}
