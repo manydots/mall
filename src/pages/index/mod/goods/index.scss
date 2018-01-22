@@ -39,6 +39,17 @@
               width:90%;
               margin:0 auto;
               overflow:hidden;
+              position: relative;
+              .labelname{
+                  position: absolute;
+                  top: 5px;
+                  left: 0;
+                  color: #FF0036;
+                  padding: 2px 4px;
+                  font-size: 12px;
+                  border: 1px solid #FF0036;
+              }
+
             }
 
             .pic {

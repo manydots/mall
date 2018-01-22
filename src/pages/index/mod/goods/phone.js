@@ -1,24 +1,9 @@
 'use strict';
 
 import React from 'react';
-import Tools from 'utils/index';
+import LinkTool from 'utils/linkTools';
 import {Button} from 'qnui';
 import $ from 'jquery';
-
-const linkConfig = {
-  //本地localhost或127.0.0.1环境下的路径设置
-  local: {
-    'index': '/demos/index.html',
-    'login': '/demos/login.html',
-    'detail':'/demos/detail.html'
-  },
-  onLine: {//自行根据服务端路径定义
-    'index': '/demos/index.html',
-    'login': '/demos/login.html',
-    'detail':'/demos/detail.html'
-  }
-}
-const links = Tools.isLocal() ? linkConfig.local : linkConfig.onLine;
 
 class Phone extends React.Component {
   constructor(props) {
@@ -52,7 +37,7 @@ class Phone extends React.Component {
   goDetail(id){
     //http://www.233ar.com/mall/product/getProductsByProductID
     console.log(id);
-    location.href = links.detail+'?id='+id;
+    location.href = LinkTool.detail+'?id='+id;
 
   }
 
@@ -68,6 +53,7 @@ class Phone extends React.Component {
               list.map((item, index) => 
                 <li className="Phone-li" key={index} onClick={this.goDetail.bind(this,item.product_id)}>
                   <div className="Cont">
+                      <span className="labelname">{item.label_name}</span>
                       <div className="pic"><img src={'http://demo.jfinalshop.com/4.0/201501/d7f59d79-1958-4059-852c-0d6531788b48-thumbnail.jpg'} /></div>
                       <div className="introduce">{item.introduce}</div>
                       <div className="title">{item.name}</div>

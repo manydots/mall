@@ -2,25 +2,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tools from 'utils/index';
+import LinkTool from 'utils/linkTools';
 import Form, {Item as FormItem } from 'qnui/lib/form';
 import {Button,Input,Field,Dialog} from 'qnui';
 import $ from 'jquery';
 import '../../sources/jquery.cookie';
 import './index.scss';
-
-const linkConfig = {
-  //本地localhost或127.0.0.1环境下的路径设置
-  local: {
-    'index': '/demos/index.html',
-    'login': '/demos/login.html'
-  },
-  onLine: {//自行根据服务端路径定义
-    'index': '/demos/index.html',
-    'login': '/demos/login.html'
-  }
-}
-const links = Tools.isLocal() ? linkConfig.local : linkConfig.onLine;
 
 class Login extends React.Component {
 	constructor(props) {
@@ -56,10 +43,8 @@ class Login extends React.Component {
 			            	});
 			            	return;
 			            }else{
-			            	Dialog.alert({
-			            		content:'页面即将跳转...'
-			            	});
-			            	location.href = links.index;
+			            	
+			            	location.href = LinkTool.index;
 
 			            }
 			        },  

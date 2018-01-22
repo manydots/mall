@@ -1,0 +1,113 @@
+.next-tabs-wrapped > .next-tabs-bar  .next-tabs-tab.active{
+	color: #FF0036;
+}
+.next-tabs-wrapped>.next-tabs-bar .next-tabs-tab:before{
+	background: #FF0036;
+	
+}
+
+.detail {
+	width: 100%;
+	overflow: hidden;
+	clear: both;
+	.detailIn {
+		width: 990px;
+		overflow: hidden;
+		margin: 50px auto;
+		clear: both;
+
+
+		.detailIn-left {
+			float: left;
+			overflow: hidden;
+			width: 460px;
+			height: 460px;
+
+			.pic{
+				width: 420px;
+				height: 420px;
+				margin: 0 auto;
+				overflow: hidden;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+
+		.detailIn-right {
+			width: 530px;
+
+			float: left;
+			overflow: hidden;
+
+			.detailIn-tip {
+				width: 100%;
+				padding: 20px;
+				border: 1px solid #e2e2e2;
+				color: #000;
+				font-size: 14px;
+				overflow: hidden;
+				
+				.rol{
+					margin-bottom: 5px;
+					overflow: hidden;
+					line-height: 36px;
+
+				}
+				label{
+					color: #838383;
+					width: 66px;
+					display: inline-block;
+					overflow: hidden;
+					float: left;
+
+				}
+
+				.description{
+					font-size: 16px;
+					font-weight: 600;
+					color: #000;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+				}
+				.introduce{
+					font-size: 14px;
+    				color: #FF0036;
+    				
+				}
+
+			}
+			.buy{
+				overflow: hidden;
+				margin: 20px auto;
+			}
+
+		}
+
+	}
+	.details {
+		width: 990px;
+		overflow: hidden;
+		margin: 20px auto;
+		clear: both;
+		.details-left{
+			float: left;
+			width: 190px;
+			overflow: hidden;
+			border: 1px solid #e5e5e5;
+			min-height: 500px;
+		}
+		.details-right{
+			float: left;
+			width: 790px;
+			overflow: hidden;
+			
+			min-height: 50px;
+
+		}
+	}
+
+}
